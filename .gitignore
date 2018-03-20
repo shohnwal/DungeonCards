@@ -16,7 +16,6 @@ Saved
 #Unreal Engine
 StarterContent/
 Saved/
-Binaries/
 Build/
 Debug/
 Intermediate/
@@ -28,3 +27,5 @@ obj/
 *.opensdf
 *.sdf
 *.suo
+*.exe
+*.pdb
