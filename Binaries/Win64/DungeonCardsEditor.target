@@ -16,27 +16,27 @@
 	},
 	"BuildProducts": [
 		{
-			"Path": "$(ProjectDir)/Plugins/AdvancedSessions/AdvancedSessions/Binaries/Win64/UE4Editor-AdvancedSessions-5603.dll",
+			"Path": "$(ProjectDir)/Plugins/AdvancedSessions/AdvancedSessions/Binaries/Win64/UE4Editor-AdvancedSessions-8624.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/AdvancedSessions/AdvancedSessions/Binaries/Win64/UE4Editor-AdvancedSessions-5603.pdb",
+			"Path": "$(ProjectDir)/Plugins/AdvancedSessions/AdvancedSessions/Binaries/Win64/UE4Editor-AdvancedSessions-8624.pdb",
 			"Type": "SymbolFile"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Development/UE4Editor-AdvancedSessions-5603.lib",
+			"Path": "$(ProjectDir)/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Development/UE4Editor-AdvancedSessions-8624.lib",
 			"Type": "ImportLibrary"
 		},
 		{
-			"Path": "$(ProjectDir)/Binaries/Win64/UE4Editor-DungeonCards-2460.dll",
+			"Path": "$(ProjectDir)/Binaries/Win64/UE4Editor-DungeonCards-9178.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(ProjectDir)/Binaries/Win64/UE4Editor-DungeonCards-2460.pdb",
+			"Path": "$(ProjectDir)/Binaries/Win64/UE4Editor-DungeonCards-9178.pdb",
 			"Type": "SymbolFile"
 		},
 		{
-			"Path": "$(ProjectDir)/Intermediate/Build/Win64/UE4Editor/Development/UE4Editor-DungeonCards-2460.lib",
+			"Path": "$(ProjectDir)/Intermediate/Build/Win64/UE4Editor/Development/UE4Editor-DungeonCards-9178.lib",
 			"Type": "ImportLibrary"
 		},
 		{
