@@ -1,0 +1,55 @@
+
+EnumTurnState
+Upkeep
+PermaEffects
+DrawCard
+ActionStage
+EndTurn
+Counter
+NotMyTurn
+
+Switch player priority
+Upkeep
+perma effects of this player tick
+draw card
+move character/use cards
+end turn
+
+
+PlayerState
+	Array<UCard> Deck
+	Array<UCard> Hand
+	Array<UCard> Graveyard
+	UCard*		 PlayedCardSlot
+	
+	
+	
+Playing cards:
+	Client-PlayerController:
+	Drag card towards UMG PlayedCardSlot widget
+	On drop on UMG PlayedCardSlot widget:
+		call SERVER_WantToPlayCard(UCard*)
+		
+	Server Playercontroller:
+	SERVER_WantToPlayCard(UCard*)
+		call Gamemode->WantToPlayCard(Player*, UCard*)
+		
+	Server GameMode:
+	WantToPlayCard(Player*, UCard*)
+		Check playerstate if player has UCard* in Hand
+		if true:
+			PlayCard(Player*, UCard*)
+		if false:
+			call Player->Controller->CLIENT_CantPlayThisCard() -> display error message
+	
+	PlayCard(Player*, Ucard*)
+		put card in playedcardslot
+		remove card from hand
+		if cardplay is visible to everyone or counterable:
+			notify other player :
+			MULTICAST_UpdatePlayedCardWidget
+			
+			if card is counterable, allow other player to counter:
+			CLIENT_SetControlMode(Player* currentplayer, "Cardplay suspended")
+			CLIENT_SetControlMode(Player* otherplayer, "counter cards allowed")
+			

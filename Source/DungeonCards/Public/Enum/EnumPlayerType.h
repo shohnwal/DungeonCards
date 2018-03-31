@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/UserDefinedEnum.h"
-#include "EnumCharacterState.generated.h"
+#include "EnumPlayerType.generated.h"
 
 /**
 *

@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "EnumCardType.h"
+#include "WidgetCard.h"
 #include "DCCard.generated.h"
 
 /**
@@ -15,8 +16,16 @@ class DUNGEONCARDS_API UDCCard : public UObject
 {
 	GENERATED_BODY()
 public:
+	UDCCard();
+
 	UFUNCTION(BlueprintCallable, Category = "DungeonCards")
-	static UDCCard* SpawnCardObject();
+	void RemoveFromScreen();
+	/*
+	UFUNCTION(BlueprintCallable, Category = "DungeonCards")
+	static UDCCard* CreateCard(int32 cardid);
+	*/
+	UFUNCTION(BlueprintCallable, Category = "DungeonCards")
+	UWidgetCard* CreateWidgetCard(APlayerController* owningplayer);
 
 	UPROPERTY(Replicated, BlueprintReadWrite)
 	int32 CardID;
@@ -28,5 +37,8 @@ public:
 	int32 Health;
 	UPROPERTY(Replicated, BlueprintReadWrite)
 	int32 ManaCost;
-	
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	TSubclassOf<UWidgetCard> WidgetCardClass;
+	UPROPERTY(BlueprintReadWrite)
+	UWidgetCard* WidgetCard;
 };

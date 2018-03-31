@@ -6,6 +6,8 @@
 #include "GameFramework/GameModeBase.h"
 #include "DungeonCardsGameMode.generated.h"
 
+
+
 UCLASS(minimalapi)
 class ADungeonCardsGameMode : public AGameModeBase
 {

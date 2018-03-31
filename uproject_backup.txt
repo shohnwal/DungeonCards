@@ -16,5 +16,9 @@
 		}
 	],
 	"Plugins": [
+		{
+			"Name": "AdvancedSteamSessions",
+			"Enabled": false
+		}
 	]
 }

@@ -4,13 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "Engine/UserDefinedEnum.h"
-#include "EnumCharacterState.generated.h"
+#include "EnumControlMode.generated.h"
 
 /**
 *
 */
 UENUM(BlueprintType)		//"BlueprintType" is essential to include
-enum class ECardType : uint8
+enum class EControlMode : uint8
 {
 	DEFAULT				UMETA(DisplayName = "Default controls"),
 	WAITINGFORSERVERRESPONSE	UMETA(DisplayName = "Waiting for server response"),
