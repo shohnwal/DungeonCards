@@ -12,9 +12,12 @@
 UENUM(BlueprintType)		//"BlueprintType" is essential to include
 enum class EControlMode : uint8
 {
-	DEFAULT				UMETA(DisplayName = "Default controls"),
-	WAITINGFORSERVERRESPONSE	UMETA(DisplayName = "Waiting for server response"),
+	DEFAULTCONTROLS		UMETA(DisplayName = "Default controls"),
+	NOGAMEPLAY			UMETA(DisplayName = "No gameplay controls"),
+	WAITINGFORRESPONSE	UMETA(DisplayName = "Waiting for server response"),
+	PLAYCOUNTERSPELLSONLY	UMETA(DisplayName = "Play counterspells"),
 	SELECTGROUNDLOCATION UMETA(DisplayName = "Select Ground Location"),
 	SELECTHERO				UMETA(DisplayName = "Select Hero"),
-	SELECTMINION			UMETA(DisplayName = "Select Minion")
+	SELECTMINION			UMETA(DisplayName = "Select Minion"),
+	SELECTCHARACTER			UMETA(DisplayName = "Select any character")
 };
