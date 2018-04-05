@@ -1,4 +1,117 @@
 
+default controls 
+	
+	request end turn:
+		set controls to "waiting for server response"
+		
+	start turn
+		set controls to "default controls"
+		
+	not my turn
+		set controls to "no gameplay"
+		
+	
+	play card
+		set controls to "waiting for server response"
+	play card confirmed
+		switch cardtype
+			case summon:
+				set controls to "summon minion"
+			case spell :
+				set controls to "no gameplay"
+				
+	other player played card confirmed:
+		switch cardtype
+			case spell :
+				set controls to "play counterspells only"
+				
+
+Server														Client
+															Active								Passive
+
+						>>>	MULTICAST_SwitchTurn		>>>							call on gamestate
+															control(waitingforserverresponse)
+						<<< SERVER_ConfirmTurnStarted 	<<<							call on pc
+						>>> MULTICAST_BeginPhase(Upkeep)>>>							call on gamestate
+												
+make list of all upkeep objects
+if list is not empty:
+	take next item
+	if owner can pay upkeep:
+						>>>	CLIENT_RequestUpkeepDecision(UObject)>>>							call on PC
+															control(upkeep)
+															control(nogameplay)
+						<<< SERVER_AnswerUpkeepRequest(UObject, bool) <<<				call on PC
+if list is not empty : repeat
+
+						>>> MULTICAST_BeginPhase(PermaEffects)>>>					call on gamestate
+do perma effects
+						>>> MULTICAST_BeginPhase(DrawCard)>>>						call on gamestate
+															control(drawcard)
+drawcard
+						>>> MULTICAST_BeginPhase(ActionPhase)>>>					call on gamestate
+															control(Default)
+															control(nogameplay)
+						<<< SERVER_TryPlayCard(UCard) <<<							call on PC
+check if can play card
+decrease mana 
+						>>> CLIENT_ConfirmPlayCard >>>								call on PC
+		
+						if card is spellcard :
+						>>> p: CLIENT_AskForCounterSpell >>>						call on PC
+															control(nogameplay)					control(counterspell)
+				
+		
+						else:
+						>>> MULTICAST_ContinuePhase(ActionPhase)>>>					call on gamestate
+															control(Default)
+												
+												
+												
+																					maybe : control(counterspell)
+																					maybe : control(nogameplay)
+						<<< SERVER_RequestEndTurn		<<<							call on PC
+															control(nogameplay)
+		
+		
+
+	
+play card :
+	a>s : play card
+	m<s : confirm play card (updates played card image)
+	m<s : finish play card
+
+play spell card :
+	a>s : play card
+	m<s : confirm play card (updates played card image)
+	m<s : finish play card
+	
+	
+	TArray<UOBject> CurrentlyPlayedCards
+	
+	
+play spell card
+	a				s								p
+	s_try play card
+					add card to playedcardslot
+					m_updateplayedcardslot
+					>p c_ask for counter spell
+													controls(counter)
+													s_try play card
+					add card to playedcardslot
+					m_updateplayedcardslot
+					>a c_ask for counter spell					
+	controls(counter)
+	s_no counter
+					get playedcardslot[0]
+					do stuff with it
+					put each card in respective graveyards
+					>a c_resumephase(action)
+					
+					
+					
+					
+		
 EnumTurnState
 Upkeep
 PermaEffects

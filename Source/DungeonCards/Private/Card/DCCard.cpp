@@ -18,6 +18,11 @@ UDCCard::UDCCard()
 	*/
 }
 
+bool UDCCard::IsSupportedForNetworking() const
+{
+	return true;
+}
+
 void UDCCard::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
@@ -37,7 +42,6 @@ void UDCCard::RemoveFromScreen()
 
 UWidgetCard* UDCCard::CreateWidgetCard(APlayerController* owningplayer)
 {
-	
 	this->WidgetCard = CreateWidget<UWidgetCard>(owningplayer->GetWorld(), this->WidgetCardClass);
 	this->WidgetCard->CardData = this;
 	return this->WidgetCard;

@@ -18,6 +18,10 @@ class DUNGEONCARDS_API UDCCard : public UObject
 public:
 	UDCCard();
 
+	virtual bool IsSupportedForNetworking() const override;
+
+	void GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const override;
+
 	UFUNCTION(BlueprintCallable, Category = "DungeonCards")
 	void RemoveFromScreen();
 	/*
