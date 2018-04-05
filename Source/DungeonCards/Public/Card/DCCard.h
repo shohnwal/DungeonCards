@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
+#include "GameFramework/Actor.h"
 #include "EnumCardType.h"
 #include "WidgetCard.h"
 #include "DCCard.generated.h"
@@ -12,14 +12,12 @@
  * 
  */
 UCLASS(Abstract, Blueprintable, BlueprintType)
-class DUNGEONCARDS_API UDCCard : public UObject
+class DUNGEONCARDS_API ADCCard : public AActor
 {
 	GENERATED_BODY()
 public:
-	UDCCard();
-
-	virtual bool IsSupportedForNetworking() const override;
-
+	ADCCard();
+	
 	void GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const override;
 
 	UFUNCTION(BlueprintCallable, Category = "DungeonCards")

@@ -6,7 +6,7 @@
 #include "Blueprint/UserWidget.h"
 #include "WIdgetCard.generated.h"
 
-class UDCCard;
+class ADCCard;
 /**
  * 
  */
@@ -16,6 +16,6 @@ class DUNGEONCARDS_API UWidgetCard : public UUserWidget
 	GENERATED_BODY()
 public:
 	UPROPERTY(BlueprintReadWrite)
-	UDCCard* CardData;
+	ADCCard* CardData;
 	
 };

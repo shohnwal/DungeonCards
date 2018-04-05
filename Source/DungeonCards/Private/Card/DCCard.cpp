@@ -5,9 +5,12 @@
 #include "WidgetCard.h"
 #include "UnrealNetwork.h"
 
-UDCCard::UDCCard()
+ADCCard::ADCCard()
 	//: WidgetCardClass(nullptr)
 {
+	this->bReplicates = true;
+	this->SetActorTickEnabled(false);
+
 	//this->WidgetCard = NewObject<UWidgetCard>(this, this->WidgetCardClass);
 	/*
 	ConstructorHelpers::FClassFinder<UUSerWidget> WidgetCardClass_Temp(TEXT("/Game/Blueprint/Ui/Game/Cards/W_NullCard"));
@@ -18,29 +21,24 @@ UDCCard::UDCCard()
 	*/
 }
 
-bool UDCCard::IsSupportedForNetworking() const
-{
-	return true;
-}
-
-void UDCCard::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const
+void ADCCard::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
-	DOREPLIFETIME(UDCCard, CardID);
-	DOREPLIFETIME(UDCCard, CardType);
-	DOREPLIFETIME(UDCCard, Attack);
-	DOREPLIFETIME(UDCCard, Health);
-	DOREPLIFETIME(UDCCard, ManaCost);
+	DOREPLIFETIME(ADCCard, CardID);
+	DOREPLIFETIME(ADCCard, CardType);
+	DOREPLIFETIME(ADCCard, Attack);
+	DOREPLIFETIME(ADCCard, Health);
+	DOREPLIFETIME(ADCCard, ManaCost);
 
 }
 
-void UDCCard::RemoveFromScreen()
+void ADCCard::RemoveFromScreen()
 {
 	this->WidgetCard->RemoveFromParent();
 }
 
-UWidgetCard* UDCCard::CreateWidgetCard(APlayerController* owningplayer)
+UWidgetCard* ADCCard::CreateWidgetCard(APlayerController* owningplayer)
 {
 	this->WidgetCard = CreateWidget<UWidgetCard>(owningplayer->GetWorld(), this->WidgetCardClass);
 	this->WidgetCard->CardData = this;

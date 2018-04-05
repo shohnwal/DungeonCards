@@ -6,7 +6,7 @@
 #include "GameFramework/GameMode.h"
 #include "DCGameMode.generated.h"
 
-class UDCCard;
+class ADCCard;
 
 /**
  * 
@@ -18,6 +18,6 @@ class DUNGEONCARDS_API ADCGameMode : public AGameMode
 public:
 	
 	UFUNCTION(BlueprintCallable, Category = "DungeonCards")
-	UDCCard* CreateCard(TSubclassOf<UDCCard> cardclass);
+	ADCCard* CreateCard(TSubclassOf<ADCCard> cardclass);
 	
 };

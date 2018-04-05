@@ -7,8 +7,9 @@
 
 
 
-UDCCard* ADCGameMode::CreateCard(TSubclassOf<UDCCard> cardclass)
+ADCCard* ADCGameMode::CreateCard(TSubclassOf<ADCCard> cardclass)
 {
-	UDCCard* card = NewObject<UDCCard>(this, cardclass);
+	FActorSpawnParameters params;
+	ADCCard* card = this->GetWorld()->SpawnActor<ADCCard>(cardclass,params);
 	return card;
 }
