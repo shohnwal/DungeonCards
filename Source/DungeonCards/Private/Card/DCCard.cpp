@@ -30,13 +30,33 @@ void ADCCard::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifeti
 	DOREPLIFETIME(ADCCard, Attack);
 	DOREPLIFETIME(ADCCard, Health);
 	DOREPLIFETIME(ADCCard, ManaCost);
-
+	DOREPLIFETIME(ADCCard, bHasUpkeepCost);
+	DOREPLIFETIME(ADCCard, UpkeepCost);
+	DOREPLIFETIME(ADCCard, bDisplayCardPlayToEnemy);
 }
 
-void ADCCard::RemoveFromScreen()
+void ADCCard::RemoveFromUMGParent()
 {
 	this->WidgetCard->RemoveFromParent();
 }
+
+/*
+void ADCCard::PlayCard_Implementation()
+{
+}
+
+void ADCCard::ActivateCardEffect_Implementation()
+{
+}
+
+void ADCCard::PermanentEffect_Implementation()
+{
+}
+
+void ADCCard::UpkeepEffect_Implementation(bool upkeepAccepted)
+{
+}
+*/
 
 UWidgetCard* ADCCard::CreateWidgetCard(APlayerController* owningplayer)
 {
