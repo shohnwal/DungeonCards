@@ -22,10 +22,10 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "DungeonCards")
 	void RemoveFromUMGParent();
-/*
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "DungeonCards")
-	void PlayCard();
 
+	//UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, Category = "DungeonCards")
+	//void TryPlayCard();
+/*
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "DungeonCards")
 	void ActivateCardEffect();
 
@@ -65,4 +65,5 @@ public:
 	TSubclassOf<UWidgetCard> WidgetCardClass;
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere)
 	UWidgetCard* WidgetCard;
+
 };

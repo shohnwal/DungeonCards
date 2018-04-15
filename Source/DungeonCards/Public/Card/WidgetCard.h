@@ -15,7 +15,10 @@ class DUNGEONCARDS_API UWidgetCard : public UUserWidget
 {
 	GENERATED_BODY()
 public:
-	UPROPERTY(BlueprintReadWrite)
+	UPROPERTY(BlueprintReadWrite, Category = "DCCard")
 	ADCCard* CardData;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "DCCard")
+	UTexture2D* wCardImageTexture;
 	
 };

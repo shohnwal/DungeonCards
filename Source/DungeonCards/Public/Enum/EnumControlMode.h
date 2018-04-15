@@ -14,7 +14,7 @@ enum class EControlMode : uint8
 {
 	DEFAULTCONTROLS		UMETA(DisplayName = "Default controls"),
 	NOGAMEPLAY			UMETA(DisplayName = "No gameplay controls"),
-	WAITINGFORRESPONSE	UMETA(DisplayName = "Waiting for server response"),
+	//WAITINGFORRESPONSE	UMETA(DisplayName = "Waiting for server response"),
 	PLAYCOUNTERSPELLSONLY	UMETA(DisplayName = "Play counterspells"),
 	SELECTGROUNDLOCATION UMETA(DisplayName = "Select Ground Location"),
 	SELECTHERO				UMETA(DisplayName = "Select Hero"),
