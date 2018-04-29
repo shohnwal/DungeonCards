@@ -55,7 +55,7 @@ drawcard
 						<<< SERVER_TryPlayCard(UCard) <<<							call on PC
 check if can play card
 decrease mana 
-						>>> CLIENT_ConfirmPlayCard >>>								call on PC
+						>>> MULTICAST_UpdatePlayedCard >>>								call on PC
 		
 						if card is spellcard :
 						>>> p: CLIENT_AskForCounterSpell >>>						call on PC

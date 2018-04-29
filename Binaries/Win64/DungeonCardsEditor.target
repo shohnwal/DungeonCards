@@ -16,15 +16,15 @@
 	},
 	"BuildProducts": [
 		{
-			"Path": "$(ProjectDir)/Binaries/Win64/UE4Editor-DungeonCards-5185.dll",
+			"Path": "$(ProjectDir)/Binaries/Win64/UE4Editor-DungeonCards-9429.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(ProjectDir)/Binaries/Win64/UE4Editor-DungeonCards-5185.pdb",
+			"Path": "$(ProjectDir)/Binaries/Win64/UE4Editor-DungeonCards-9429.pdb",
 			"Type": "SymbolFile"
 		},
 		{
-			"Path": "$(ProjectDir)/Intermediate/Build/Win64/UE4Editor/Development/UE4Editor-DungeonCards-5185.lib",
+			"Path": "$(ProjectDir)/Intermediate/Build/Win64/UE4Editor/Development/UE4Editor-DungeonCards-9429.lib",
 			"Type": "ImportLibrary"
 		},
 		{
