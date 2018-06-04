@@ -37,6 +37,6 @@ public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Dungeon Cards")
 	TArray<AGridTile*> Tiles;
 
-	std::vector<AGridTile*> Grid2DMap;
+	std::vector<std::vector<AGridTile*>> Grid2DMap;
 	
 };

@@ -41,14 +41,14 @@ public:
 	AGridTile* GetCurrentWorldTile();
 
 
-	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "DungeonCards")
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Default")
 	int MaxMovePoints;
-	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "DungeonCards")
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Default")
 	int CurrentMovePoints;
-	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "DungeonCards")
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Default")
 	int Attack;
-	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "DungeonCards")
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Default")
 	int Health;
-	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "DungeonCards")
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Default")
 	AGridTile* CurrentTile;
 };
